@@ -1,28 +1,25 @@
 buildscript {
-    repositories {
-        mavenCentral()
-        maven {
-            name = "forge"
-            url = "http://files.minecraftforge.net/maven"
-        }
-        maven {
-            name = "sonatype"
-            url = "https://oss.sonatype.org/content/repositories/snapshots/"
-        }
-    }
-    dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
-    }
+	repositories {
+		mavenCentral()
+		maven {
+			name = "forge"
+			url = "https://files.minecraftforge.net/maven"
+		}
+
+		maven {
+			name = "sonatype"
+			url = "https://oss.sonatype.org/content/repositories/snapshots/"
+		}
+	}
+	dependencies { classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT' }
 }
+
 apply plugin: 'forge'
-sourceCompatibility = 1.6
-targetCompatibility = 1.6
+
 archivesBaseName = "NoMoreRecipeConflict"
-version = "0.3"
+version = "0.3.2"
 minecraft {
-    version = "1.8-11.14.3.1450"
-    runDir = "eclipse"
-    mappings = "snapshot_20150401"
+    version = "1.7.10-10.13.4.1614-1.7.10"
     replace '$version', version
 }
 sourceSets.main.java{srcDirs project.projectDir.getPath() include("assets/**")}

@@ -44,7 +44,7 @@ public final class CraftingHandler {
                 Field f = knownCraftingContainer.get(name);
                 if (f == null) {
                     for (Field field : container.getClass().getDeclaredFields()) {
-                        if (field!=null && InventoryCrafting.class.isAssignableFrom(field.getClass())) {
+                        if (field!=null && field.getType().isAssignableFrom(InventoryCrafting.class)) {
                             try {
                                 field.setAccessible(true);
                                 InventoryCrafting craft = InventoryCrafting.class.cast(field.get(container));
@@ -120,7 +120,7 @@ public final class CraftingHandler {
             return ((ContainerWorkbench) container).craftResult;
         else if(notCraftingContainer!=null){
             for(Field field:container.getClass().getDeclaredFields()){
-                if(field != null && IInventory.class.isAssignableFrom(field.getClass())){
+                if(field != null && field.getType().isAssignableFrom(IInventory.class)){
                     try {
                         field.setAccessible(true);
                         IInventory result = IInventory.class.cast(field.get(container));

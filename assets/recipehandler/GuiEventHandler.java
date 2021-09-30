@@ -1,6 +1,8 @@
 package assets.recipehandler;
 
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import org.lwjgl.opengl.GL11;
+
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -8,7 +10,6 @@ import net.minecraft.client.renderer.InventoryEffectRenderer;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.GuiScreenEvent;
-import org.lwjgl.opengl.GL11;
 
 /**
  * Created by Olivier on 15/09/2014.
@@ -55,7 +56,7 @@ public final class GuiEventHandler {
                 this.drawTexturedModalRect(this.xPosition + deltaX, this.yPosition, k, 0, this.width, this.height);
                 if(!RecipeMod.cornerText) {
                     int l = this.enabled ? 0xFFFFFF : 10526880;
-                    this.drawCenteredString(mc.fontRendererObj, this.displayString, this.xPosition + deltaX, this.yPosition + this.height / 2, l);
+                    this.drawCenteredString(mc.fontRenderer, this.displayString, this.xPosition + deltaX, this.yPosition + this.height / 2, l);
                 }
             }
         }

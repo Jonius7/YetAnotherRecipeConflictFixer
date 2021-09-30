@@ -4,7 +4,7 @@
   "name": "NoMoreRecipeConflict",
   "description": "Switch between conflicting recipes",
   "version": $version,
-  "credits": "",
+  "credits": "Created by stimmedcow and GotoLink; Bugfixes by Jonius7",
   "logoFile": "",
   "mcversion": $mcversion,
   "url": "http://www.minecraftforum.net/topic/1098727-",
